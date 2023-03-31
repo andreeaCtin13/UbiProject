@@ -1,0 +1,120 @@
+.home {
+  background-color: #8e7cbb;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .container {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 70%;
+  height: fit-content;
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .home .container {
+    width: 90%;
+  }
+}
+
+.home .container .navbar {
+  display: flex;
+  gap: 10px;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 2;
+}
+
+.chat {
+  flex: 2;
+}
+
+.chatIcons {
+  display: flex;
+  gap: 10px;
+}
+
+.messages {
+  background-color: #ead5ff;
+  padding: 10px;
+  height: 75vh;
+  overflow: scroll;
+}
+.message {
+  display: flex;
+  align-items: center;
+}
+.messageInfo {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  font-weight: 300;
+}
+.messageInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.messageContent p {
+  background-color: rgb(108, 86, 136);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 0px 10px 10px 10px;
+}
+
+.input {
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  display: flex;
+  margin-bottom: 0px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.input input {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  border: none;
+  outline: none;
+  color: gray;
+  font-size: 18px;
+}
+
+.send {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.send button {
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #2c1140;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.send button:hover {
+  background-color: #994eb9;
+  box-shadow: 0px 15px 10px rgb(58, 4, 82);
+  color: #fff;
+  transform: translateY(-3px);
+}
