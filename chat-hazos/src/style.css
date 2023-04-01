@@ -42,7 +42,8 @@
   background-color: #ead5ff;
   padding: 10px;
   height: 75vh;
-  overflow: scroll;
+  overflow: auto;
+  border-radius: 10px 10px 0px 0;
 }
 .message {
   display: flex;

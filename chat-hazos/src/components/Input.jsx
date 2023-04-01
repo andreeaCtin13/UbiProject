@@ -3,27 +3,31 @@ import React, {  useState } from "react";
 import Attach from "../images/attach.png";
 
 
-const Input = () => {
-  const [text, setText] = useState("");
-      
+const Input = ({handleClick, handleChange}) => {
+
+  function handleSubmit(e) {
+    e.preventDefault();
+}
+
   return (
     <div className="input">
       <input
         type="text"
-        placeholder="Scrie..."
         
-        onChange={(e) => setText(e.target.value)}
-        value={text}
+        placeholder="Type your message here" id="user-input" onChange={(e) => handleChange(e.target.value)}
       />
       <div className="send">
         <img src={Attach} alt="" />
+
+        <form action="" onSubmit={(e) => handleSubmit(e)}>
         <input
           type="file"
           style={{ display: "none" }}
           id="file"
         />
      
-        <button >Send</button>
+        <button  onClick={handleClick}>Send</button>
+        </form>
       </div>
     </div>
   );
