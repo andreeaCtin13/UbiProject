@@ -4,9 +4,11 @@ import Attach from "../images/attach.png";
 
 
 const Input = ({handleClick, handleChange}) => {
+  const [render, rerender] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+ 
 }
 
   return (
@@ -19,14 +21,15 @@ const Input = ({handleClick, handleChange}) => {
       <div className="send">
         <img src={Attach} alt="" />
 
-        <form action="" onSubmit={(e) => handleSubmit(e)}>
+        <form action="" onSubmit={(e) => handleSubmit(e)} >
         <input
           type="file"
           style={{ display: "none" }}
           id="file"
         />
      
-        <button  onClick={handleClick}>Send</button>
+        <button 
+         onClick={handleClick}>Send</button>
         </form>
       </div>
     </div>
