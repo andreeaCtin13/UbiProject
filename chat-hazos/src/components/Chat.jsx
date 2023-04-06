@@ -8,6 +8,7 @@ const Chat = () => {
 
   const [chatData, setChatData] = useState({ "history": [{ "type": "openai", "data": "If you type something I'll convert it in birdlanguage" }], "response": "" });
   
+  console.log(process.env.REACT_APP_Open_AI_Key)
   const configuration = new Configuration({
     apiKey: process.env.REACT_APP_Open_AI_Key,
   });
@@ -33,9 +34,12 @@ const Chat = () => {
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0,
-      stop: ["\n"],
+      stop: ["\\n"],
     });
     console.log('response', response);
+    let processedResponse = response.data.choices[0].text; // I'm only using the text in my example
+    newChatData.history.push({ "type": "openai", "data": processedResponse })
+    setChatData(newChatData);
   }
   
   return (
