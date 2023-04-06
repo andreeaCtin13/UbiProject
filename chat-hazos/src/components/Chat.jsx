@@ -6,9 +6,9 @@ import Input from "./Input";
 const Chat = () => {
   const [prompt, setPrompt] = useState(false);
 
-  const [chatData, setChatData] = useState({ "history": [{ "type": "openai", "data": "If you type something I'll convert it in birdlanguage" }], "response": "" });
+  const [chatData, setChatData] = useState({ "history": [{ "type": "openai", "data": "Hi! My name is Dora and I'm really good at telling jokes... just give me a word and I will make u laugh <3" }], "response": "" });
   
-  console.log(process.env.REACT_APP_Open_AI_Key)
+  //console.log(process.env.REACT_APP_Open_AI_Key)
   const configuration = new Configuration({
     apiKey: process.env.REACT_APP_Open_AI_Key,
   });
@@ -25,7 +25,7 @@ const Chat = () => {
     newChatData.history.push({ "type": "user", "data": prompt })
 
    
-    let openAIPrompt = "Add pa after every syllable from: \n" + prompt + ':';
+    let openAIPrompt = "Tell me a joke that contains the word \n" + prompt + ':';
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: openAIPrompt,

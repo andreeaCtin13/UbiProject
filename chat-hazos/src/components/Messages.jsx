@@ -1,7 +1,3 @@
-
-
-
-
 const Messages = ({message, response}) => {
   return (
     <div className="messages">
@@ -10,10 +6,17 @@ const Messages = ({message, response}) => {
     className="message"
     key={index}>
     <div className="messageInfo">
+      {index%2==0 ? <img
+      src="https://th.bing.com/th/id/R.6597f900d68e1a075b04cfa8b7fd7616?rik=CzY0za9JR%2bsKjg&pid=ImgRaw&r=0"
+      alt=""
+    />
+      :
       <img
-        src="https://www.pngfind.com/pngs/m/114-1146521_girl-avatar-png-picture-female-avatar-no-face.png"
-        alt=""
-      />
+      src="https://st4.depositphotos.com/18126772/25053/v/450/depositphotos_250537942-stock-illustration-portrait-smiling-afro-man-bearded.jpg"
+      alt=""
+    />
+    }
+      
     </div>
     <div className="messageContent">
       <p>{item.data}</p>
@@ -22,13 +25,9 @@ const Messages = ({message, response}) => {
   ))}
    {response && (
         <div 
-        className="message"
+        className="messageResponse"
         key="response">
         <div className="messageInfo">
-          <img
-            src="https://www.pngfind.com/pngs/m/114-1146521_girl-avatar-png-picture-female-avatar-no-face.png"
-            alt=""
-          />
         </div>
         <div className="messageContent">
           <p>{response}</p>
